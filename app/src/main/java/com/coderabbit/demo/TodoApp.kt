@@ -28,6 +28,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Composable that displays a simple to-do list screen with input, add, toggle, and delete functionality.
+ *
+ * Shows a header ("My To-Do List"), an input field with an "Add" button, and a scrollable list of to-do items.
+ * The composable manages local UI state: the current input text and a mutable list of `TodoItem`s.
+ * Tapping "Add" when the input is not blank appends a new `TodoItem` and clears the input.
+ * Each list row exposes controls to toggle the item's `isDone` state and to remove the item from the list.
+ *
+ * @param modifier Optional [Modifier] applied to the root container.
+ */
 @Composable
 fun TodoApp(modifier: Modifier = Modifier) {
     var text by remember { mutableStateOf("") }
@@ -85,6 +95,13 @@ fun TodoApp(modifier: Modifier = Modifier) {
     }
 }
 
+/**
+ * Displays a single to-do item as a card row with a checkbox and a delete action.
+ *
+ * @param item The `TodoItem` to display (title and completion state).
+ * @param onToggle Invoked when the item's completion checkbox is toggled.
+ * @param onDelete Invoked when the item's Delete button is pressed.
+ */
 @Composable
 fun TodoRow(
     item: TodoItem,

@@ -14,6 +14,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.coderabbit.demo.ui.theme.CodeRabbitDemoTheme
 
 class MainActivity : ComponentActivity() {
+    /**
+     * Initializes the activity, enables edge-to-edge rendering, and sets the Compose UI to display the
+     * app theme with a full-screen Scaffold that hosts the TodoApp.
+     *
+     * The Scaffold's content padding is forwarded to TodoApp via Modifier.padding(innerPadding).
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being
+     * shut down, this contains the data it most recently supplied; otherwise `null`.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +35,9 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+/**
+ * Displays the app's Todo screen within CodeRabbitDemoTheme for Android Studio's composable preview.
+ */
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
